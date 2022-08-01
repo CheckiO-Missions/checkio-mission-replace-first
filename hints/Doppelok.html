@@ -1,0 +1,42 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission
+    </div>
+    <div class="answer">
+        First of all, read some material about "list.pop()" and "list.append()" methods <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I still need some help to proceed with the mission
+    </div>
+    <div class="answer">
+        So, "list.pop()" method removes the element at the specified position, witch you specify in brackets "()". If you enter in your python console "a = [1, 2, 3]" and then use "a.pop(1)", you will get "[1, 3]".
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I have gone halfway through. Need help!
+    </div>
+    <div class="answer">
+        Use "list.append()" method to add an element at the end of the list. So, if you enter in your python console "a.append(2)", you will get "[1, 3, 2]".
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        One last question. How my final solution will look like?
+    </div>
+    <div class="answer">
+        <p>Your  code should look like this. And don't forget to check is list empty.</p>
+        <pre class="brush: python">
+def replace_first(items: list) -> Iterable:
+    if items:
+        items.append(items.pop(0))
+    return items
+        </pre>
+    </div>
+</div>
+
+
+</body>
