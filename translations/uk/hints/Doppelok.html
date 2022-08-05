@@ -4,7 +4,7 @@
         У мене немає ідей, з чого мені розпочати...
     </div>
     <div class="answer">
-        Перш за все, прочитай про методи списків "list.pop()" та "list.append()" за посиланням <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">.
+        Перш за все, прочитай про методи списків "list.pop()" та "list.append()" за <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">посиланням</a>.
     </div>
 </div>
 <div class="question-answer">
@@ -28,11 +28,12 @@
         Останнє запитання. Як має виглядати мій фінальний код?
     </div>
     <div class="answer">
-        <p>Твій код повинен мати наступний вигляд. А також, не забудь про перевірку на те, чи порожній список.</p>
+        <p>Твій код повинен мати наступний вигляд. А також, не забудь про перевірку на те, чи порожній список. Порожній список або список лише з одним елементом має залишатися незмінним.</p>
         <pre class="brush: python">
 def replace_first(items: list) -> Iterable:
     if items:
-        items.append(items.pop(0))
+        items.append(items.pop(0))  # Метод items.pop(0) зберігає значення яке вирізав
+                                    # тобто перше з списку, тому можемо одразу його вставляти у список
     return items
         </pre>
     </div>

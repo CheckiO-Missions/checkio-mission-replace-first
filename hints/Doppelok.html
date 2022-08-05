@@ -4,7 +4,7 @@
         I have no idea how to start solving this mission
     </div>
     <div class="answer">
-        First of all, read some material about "list.pop()" and "list.append()" methods <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">.
+        First of all, read some material about "list.pop()" and "list.append()" methods <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">посиланням</a>.
     </div>
 </div>
 <div class="question-answer">
@@ -28,11 +28,12 @@
         One last question. How my final solution will look like?
     </div>
     <div class="answer">
-        <p>Your  code should look like this. And don't forget to check is list empty.</p>
+        <p>Your  code should look like this. And don't forget to check is list empty. An empty list or list with only one element should stay the same.</p>
         <pre class="brush: python">
 def replace_first(items: list) -> Iterable:
     if items:
-        items.append(items.pop(0))
+        items.append(items.pop(0))  # The items.pop(0) method stores the value it cut
+                                    # that is, the first one from the list, so we can immediately insert it into the list
     return items
         </pre>
     </div>
