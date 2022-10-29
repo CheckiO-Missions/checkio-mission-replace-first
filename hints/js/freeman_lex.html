@@ -1,0 +1,122 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <i>I have no idea how to start solving this mission.</i>
+    </div>
+    <div class="answer">
+        <p>
+            💡 The idea is to remove the first element from the Array, keep it and add at the end of the Array.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Ok, what should I start from?</i>
+    </div>
+    <div class="answer">
+        <p>
+            First of all, you need to understand, that you only need to perform any operations, if the Array has at least two elements. Otherwise, you may return the Array immediately.
+        </p>
+        <p>
+            To find the length of the Array, use <a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_array.asp">Array.length</a> property.
+        </p>
+        <pre class="brush: javascript">
+if (values.length > 1)
+    ...;
+
+return values;
+        </pre>
+        <p>
+            Since you will have only one line of code inside <b class="code">if</b> statement, no need to use curly brackets.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            Ok, what to do next?
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            You need to remove and store the first element of the Array. Use <a target="_blank" href="https://www.w3schools.com/jsref/jsref_shift.asp">Array.shift()</a> method. It removes and returns (store) the first element.
+        </p>
+        <pre class="brush: javascript">
+values.shift()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>
+            How to put this element at the end of the Array?
+        </i>
+    </div>
+    <div class="answer">
+        <p>
+            For this purpose another method will be useful - <a target="_blank" href="https://www.w3schools.com/jsref/jsref_push.asp">Array.push()</a>. Since, <b class="code">Array.shift()</b> returns value, you may use it as the argument for <b class="code">Array.push()</b> method.
+        </p>
+        <pre class="brush: javascript">
+values.push(values.shift());
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>So, how my final solution should look like?</i>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to wrap your code into function expression. 
+        </p>
+        <p>Here is the whole solution:</p>
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    if (values.length > 1)
+        values.push(values.shift());
+    
+    return values;
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!</i>
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            In this solution other methods are used: <b class="code">Array.slice(index)</b> - to get a new Array, starting from the needed element, <b class="code">Array.concat()</b> - to join Arrays. Ternary operator is also used here, which is other form to write condition.   
+        </p>
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    return values.length > 1 ? values.slice(1).concat(values[0]) : values;
+    // or
+    return values.length > 1 ? [...values.splice(1), values[0]] : values; 
+}
+        </pre>
+        <p>
+            This solution is tricky, but means the same: if <b class="code">v.length</b> - do operations, after return <b class="code">v</b>, if not - just return <b class="code">v</b>.
+        </p>
+        <pre class="brush: javascript">
+function replaceFirst(v: number[]): number[] {
+    
+    return v.length && v.push(v.shift()), v;
+}
+        </pre>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <i>Thanks! I know and understand more now! Everything works fine!</i>
+    </div>
+    <div class="answer">
+        👍 Glad to hear it!
+    </div>
+</div>
+</body>
