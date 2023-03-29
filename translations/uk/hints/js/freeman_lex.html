@@ -70,6 +70,7 @@ values.push(values.shift());
             Тобі просто потрібно обгорнути свій код у вираз функції.
         </p>
         <p>Ось повний розв'язок:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function replaceFirst(values: number[]): number[] {
 
@@ -79,6 +80,7 @@ function replaceFirst(values: number[]): number[] {
     return values;
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -91,6 +93,7 @@ function replaceFirst(values: number[]): number[] {
         <p>
             У цьому рішенні використовуються інші методи: <b class="code">array.slice(index)</b> - щоб отримати новий масив, починаючи з необхідного елемента, <b class="code">array.concat()</b> - щоб з'єднати масиви. Тут використовується також потрійний оператор, що є іншою формою для запису умови.   
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function replaceFirst(values: number[]): number[] {
 
@@ -99,15 +102,18 @@ function replaceFirst(values: number[]): number[] {
     return values.length > 1 ? [...values.splice(1), values[0]] : values; 
 }
         </pre>
+        </div>
         <p>
             Це рішення складніше, але означає те саме: якщо <b class="code">v.length</b> - виконуй операції, потім поверни <b class="code">v</b>, якщо ні - просто поверни <b class="code">v</b>.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function replaceFirst(v: number[]): number[] {
     
     return v.length && v.push(v.shift()), v;
 }
         </pre>
+        </div>
         <p><b>Тисни "Best solutions" в меню місії і побачиш багато інших цікавих розв'язків!</b></p>
     </div>
 </div>
