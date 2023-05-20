@@ -1,7 +1,7 @@
 <!-- Describe task in general -->
 
 <p>
-    In a given {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} the first element should become the last one. An empty {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} or {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} with only one element should stay the same. 
+    In a given {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} the first element should become the last one. An empty {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} or {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} with only one element should stay the same. 
 </p>
 
 <p style="text-align: center;">
@@ -9,18 +9,18 @@
 </p>
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %}.
+    <strong>Input:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">Iterable</span>{% endif %}.
 </p>
 
 <p>
-    <strong>Output: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}. 
+    <strong>Output:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">Iterable</span>{% endif %}. 
 </p>
 
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
 
