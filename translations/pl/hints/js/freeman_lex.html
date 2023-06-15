@@ -1,0 +1,128 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Nie mam pojęcia, jak zacząć rozwiązywać tę misję.</p>
+    </div>
+    <div class="answer">
+        <p>
+            chodzi o to, aby usunąć pierwszy element z tablicy, zachować go i dodać na koniec tablicy.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, od czego powinienem zacząć?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Przede wszystkim proszę zrozumieć, że jakiekolwiek operacje należy wykonywać tylko wtedy, gdy tablica ma co najmniej dwa elementy. W przeciwnym razie można natychmiast zwrócić tablicę.
+        </p>
+        <p>
+            Aby znaleźć długość tablicy, proszę użyć właściwości <a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_array.asp">Array.length</a>.
+        </p>
+        <pre class="brush: javascript">
+if (values.length> 1)
+    ...;
+
+return values;
+        </pre>
+        <p>
+            Ponieważ wewnątrz instrukcji <b class="code">if</b> znajduje się tylko jeden wiersz kodu, nie ma potrzeby używania nawiasów klamrowych.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok, co robić dalej?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę usunąć i zapisać pierwszy element tablicy. Proszę użyć metody <a target="_blank" href="https://www.w3schools.com/jsref/jsref_shift.asp">Array.shift()</a>. Usuwa ona i zwraca (zapisuje) pierwszy element.
+        </p>
+        <pre class="brush: javascript">
+values.shift()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Jak umieścić ten element na końcu tablicy?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Do tego celu przyda się inna metoda - <a target="_blank" href="https://www.w3schools.com/jsref/jsref_push.asp">Array.push()</a>. Ponieważ metoda <b class="code">Array.shift()</b> zwraca wartość, mogą Państwo użyć jej jako argumentu dla metody <b class="code">Array.push()</b>.
+        </p>
+        <pre class="brush: javascript">
+values.push(values.shift());
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Jak więc powinno wyglądać moje ostateczne rozwiązanie?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Proszę po prostu opakować swój kod w wyrażenie funkcyjne. 
+        </p>
+        <p>Oto całe rozwiązanie:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    if (values.length> 1)
+        values.push(values.shift());
+    
+    return values;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Proszę pokazać mi więcej rozwiązań!<br />
+        bo chcę być prawdziwym 🥇 bohaterem Javascriptu!</p>
+    </div>
+    <div class="answer">
+        <p>Jasne, proszę pobrać!</p>
+        <p>
+            W tym rozwiązaniu używane są inne metody: <b class="code">Array.slice(index)</b> - aby uzyskać nową tablicę, zaczynając od potrzebnego elementu, <b class="code">Array.concat()</b> - aby połączyć tablice. Użyto tu również operatora trójargumentowego, który jest inną formą zapisu warunku.   
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    return values.length> 1? values.slice(1).concat(values[0]): values;
+    // or
+    return values.length> 1? [...values.splice(1), values[0]]: values; 
+}
+        </pre>
+        </div>
+        <p>
+            To rozwiązanie jest skomplikowane, ale oznacza to samo: jeśli <b class="code">v.length</b> - proszę wykonać operacje, po zwróceniu <b class="code">v</b>, jeśli nie - proszę po prostu zwrócić <b class="code">v</b>.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(v: number[]): number[] {
+    
+    return v.length && v.push(v.shift()), v;
+}
+        </pre>
+        </div>
+        <p>Proszę kliknąć <b>Best Solutions</b> w menu misji i zobaczyć wiele innych ciekawych rozwiązań!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Dzięki! Teraz wiem i rozumiem więcej! Wszystko działa jak należy!</p>
+    </div>
+    <div class="answer">
+        miło mi to słyszeć!
+    </div>
+</div>
+</body>
