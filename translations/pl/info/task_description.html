@@ -1,7 +1,7 @@
 <!-- Describe task in general -->
 
 <p>
-    Przesuń pierwszy element z danej {% if interpreter.slug == "js-node" %}tablicy (array){% else %}listy{% endif %} na jej koniec. Pusta {% if interpreter.slug == "js-node" %}tablica{% else %}lista{% endif %} lub {% if interpreter.slug == "js-node" %}tablica{% else %}lista{% endif %} zawierająca tylko jeden element powinna pozostać niezmieniona.
+    W danej sekwencji pierwszy element powinien stać się ostatnim. Pusta sekwencja lub sekwencja zawierająca tylko jeden element powinna pozostać niezmieniona. 
 </p>
 
 <p style="text-align: center;">
@@ -9,18 +9,18 @@
 </p>
 <!-- Explain input and output values -->
 <p>
-    <strong>Wejście: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %}.
+   <strong>Dane wejściowe:</strong> {% if is_js %}Array{% else %}List{% endif %} <span>({% if is_js %}Array{% else %}List{% endif %})</span>.
 </p>
 
 <p>
-    <strong>Wyjście: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}. 
+   <strong>Dane wyjściowe:</strong> {% if is_js %}Array{% else %} List lub inny Iterable (tuple, iterator, generator){% endif %}. 
 </p>
 
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Przykład:</strong>
+        <strong>Przykłady:</strong>
     </p>
 
 
