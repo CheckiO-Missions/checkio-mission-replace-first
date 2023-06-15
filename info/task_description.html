@@ -1,7 +1,7 @@
 <!-- Describe task in general -->
 
 <p>
-    In a given {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} the first element should become the last one. An empty {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} or {% if is_js %}<span translate="repeat">array</span>{% else %}<span translate="repeat">list</span>{% endif %} with only one element should stay the same. 
+    In a given sequence the first element should become the last one. An empty sequence or with only one element should stay the same. 
 </p>
 
 <p style="text-align: center;">
@@ -9,11 +9,11 @@
 </p>
 <!-- Explain input and output values -->
 <p>
-    <strong>Input:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">List</span>{% endif %}.
+    <strong>Input:</strong> <span translate="repeat">{% if is_js %}Array{% else %}List{% endif %}</span>.
 </p>
 
 <p>
-    <strong>Output:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">Iterable</span>{% endif %}. 
+    <strong>Output:</strong> {% if is_js %}<span translate="repeat">Array</span>{% else %}<span translate="repeat">List</span> or another <span translate="repeat">Iterable</span> (<span translate="repeat">tuple</span>, <span translate="repeat">iterator</span>, <span translate="repeat">generator</span>){% endif %}. 
 </p>
 
 
