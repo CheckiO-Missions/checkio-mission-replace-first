@@ -1,0 +1,128 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>我不知道如何开始解决这项任务。</p>
+    </div>
+    <div class="answer">
+        <p>
+            我们的想法是从数组中删除第一个元素，保留它并添加到数组的末尾。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>好吧，我应该从什么开始呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            首先，你需要明白，只有当数组至少有两个元素时，你才需要执行任何操作。否则，你可以立即返回数组。
+        </p>
+        <p>
+            要查找数组的长度，请使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_array.asp">Array.length</a> 属性。
+        </p>
+        <pre class="brush: javascript">
+if (values.length> 1)
+    ...;
+
+return values;
+        </pre>
+        <p>
+            因为在<b class="code">if</b> 语句中只有一行代码，所以不需要使用大括号。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            好了，下一步做什么？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            你需要删除并存储数组的第一个元素。使用<a target="_blank" href="https://www.w3schools.com/jsref/jsref_shift.asp">Array.shift()</a> 方法。它删除并返回（存储）第一个元素。
+        </p>
+        <pre class="brush: javascript">
+values.shift()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            如何将该元素放在数组的末尾？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            为了这个目的，另一个方法将是有用的 -<a target="_blank" href="https://www.w3schools.com/jsref/jsref_push.asp">Array.push()</a> 。因为<b class="code">Array.shift()</b> 返回值，你可以用它作为<b class="code">Array.push()</b> 方法的参数。
+        </p>
+        <pre class="brush: javascript">
+values.push(values.shift());
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>那么，我的最终解决方案应该是怎样的呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            您只需要将您的代码封装成函数表达式。 
+        </p>
+        <p>下面是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    if (values.length> 1)
+        values.push(values.shift());
+    
+    return values;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>向我展示更多解决方案！<br />
+        因为我想成为一个真正的 🥇 Javascript 英雄！</p>
+    </div>
+    <div class="answer">
+        <p>当然，抓住它！</p>
+        <p>
+            在这个解决方案中使用了其他方法： <b class="code">Array.slice(index)</b> - 得到一个新的数组，从需要的元素开始，<b class="code">Array.concat()</b> - 连接数组。这里还使用了三元运算符，这是写条件的另一种形式。   
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    return values.length> 1? values.slice(1).concat(values[0]): values;
+    // or
+    return values.length> 1? [...values.splice(1), values[0]]: values; 
+}
+        </pre>
+        </div>
+        <p>
+            这个解决方法比较麻烦，但意思是一样的：如果<b class="code">v.length</b> - 进行操作，然后返回<b class="code">v</b> ，如果不是 - 只返回<b class="code">v</b> 。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(v: number[]): number[] {
+    
+    return v.length && v.push(v.shift()), v;
+}
+        </pre>
+        </div>
+        <p>在任务菜单中点击<b>Best Solutions</b> ，可以看到很多其他有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>谢谢！我现在知道并理解得更多了！一切正常！</p>
+    </div>
+    <div class="answer">
+        很高兴听到这个消息！
+    </div>
+</div>
+</body>
