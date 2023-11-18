@@ -1,0 +1,128 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 Die Idee ist, das erste Element aus dem Array zu entfernen, es zu behalten und am Ende des Arrays hinzuzufügen.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, womit soll ich beginnen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Zunächst einmal müssen Sie verstehen, dass Sie nur dann eine Operation durchführen müssen, wenn das Array mindestens zwei Elemente enthält. Andernfalls können Sie das Array sofort zurückgeben.
+        </p>
+        <p>
+            Um die Länge des Arrays zu ermitteln, verwenden Sie die Eigenschaft <a target="_blank" href="https://www.w3schools.com/jsref/jsref_length_array.asp">Array.length</a>.
+        </p>
+        <pre class="brush: javascript">
+if (values.length> 1)
+    ...;
+
+return values;
+        </pre>
+        <p>
+            Da Sie nur eine Codezeile innerhalb der Anweisung <b class="code">if</b> haben, müssen Sie keine geschweiften Klammern verwenden.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ok, was machen wir als nächstes?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen das erste Element des Arrays entfernen und speichern. Verwenden Sie die Methode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_shift.asp">Array.shift()</a>. Sie entfernt das erste Element und gibt es zurück (speichert es).
+        </p>
+        <pre class="brush: javascript">
+values.shift()
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie können Sie dieses Element am Ende des Arrays ablegen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Für diesen Zweck ist eine andere Methode nützlich - <a target="_blank" href="https://www.w3schools.com/jsref/jsref_push.asp">Array.push()</a>. Da <b class="code">Array.shift()</b> einen Wert zurückgibt, können Sie diesen als Argument für die Methode <b class="code">Array.push()</b> verwenden.
+        </p>
+        <pre class="brush: javascript">
+values.push(values.shift());
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Wie sollte also meine endgültige Lösung aussehen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen Ihren Code nur in einen Funktionsausdruck verpacken. 
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    if (values.length> 1)
+        values.push(values.shift());
+    
+    return values;
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Zeigen Sie mir mehr Lösungen!<br />
+        denn ich will ein echter 🥇 Javascript-Held sein!</p>
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            In dieser Lösung werden andere Methoden verwendet: <b class="code">Array.slice(index)</b> - um ein neues Array zu erhalten, beginnend mit dem benötigten Element, <b class="code">Array.concat()</b> - um Arrays zu verbinden. Außerdem wird hier der ternäre Operator verwendet, eine andere Form, um Bedingungen zu schreiben.   
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(values: number[]): number[] {
+
+    return values.length> 1? values.slice(1).concat(values[0]): values;
+    // or
+    return values.length> 1? [...values.splice(1), values[0]]: values; 
+}
+        </pre>
+        </div>
+        <p>
+            Diese Lösung ist kompliziert, bedeutet aber dasselbe: wenn <b class="code">v.length</b> - führen Sie die Operationen aus, danach geben Sie <b class="code">v</b> zurück, wenn nicht - geben Sie einfach <b class="code">v</b> zurück.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function replaceFirst(v: number[]): number[] {
+    
+    return v.length && v.push(v.shift()), v;
+}
+        </pre>
+        </div>
+        <p>Klicken Sie auf <b>Best Solutions</b> im Missionsmenü und sehen Sie sich viele andere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!</p>
+    </div>
+    <div class="answer">
+        👍 Freut mich zu hören!
+    </div>
+</div>
+</body>
