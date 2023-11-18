@@ -1,0 +1,62 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lesen Sie zunächst etwas Material über die Methoden von <a href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range" target="_blank">list.pop() and list.append()</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich brauche noch etwas Hilfe, um mit der Mission fortzufahren.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Also, die Methode <b class="code">list.pop()</b> entfernt das Element an der angegebenen Position, die Sie in Klammern <b class="code">()</b> angeben. Wenn Sie in Ihrer Python-Konsole <b class="code">a = [1, 2, 3]</b> eingeben und dann <b class="code">a.pop(1)</b> verwenden, erhalten Sie <b class="code">2</b> und die Liste wird zu <b class="code">[1, 3]</b>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe die Hälfte geschafft. Ich brauche Hilfe!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Verwenden Sie die Methode <b class="code">list.append()</b>, um ein Element am Ende der Liste hinzuzufügen. Wenn Sie also in Ihrer Python-Konsole <b class="code">a.append(2)</b> eingeben, wird die Liste zu <b class="code">[1, 3, 2]</b>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Eine letzte Frage. Wie wird meine endgültige Lösung aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Ihr Code sollte wie folgt aussehen. Und vergessen Sie nicht zu prüfen, ob die Liste leer ist. Eine leere Liste oder eine Liste mit nur einem Element sollte unverändert bleiben.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def replace_first(items: list) -> Iterable:
+
+    if items:
+    # The items.pop(0) method stores the value it cut
+    # that is, the first one from the list, so we can
+    # immediately insert it into the list
+        items.append(items.pop(0))  
+    return items
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
